@@ -52,8 +52,6 @@ namespace LineWebHook.Controllers {
                             break;
 
                         case "message":
-                            // reserve this block  for non-stop conversation
-                            // if (lineEvent.message.text == "我要請假") {} else {}
                             replyMessage (lineEvent, replyToken);
                             actionResult = Ok ();
                             break;
