@@ -44,7 +44,7 @@ namespace LineWebHook.Controllers {
                 var replyToken = lineEvent.replyToken;
 
                 // "0x32" is token for line verify
-                if (lineEvent.replyToken != "00000000000000000000000000000000") {
+                if (lineEvent.replyToken !="00000000000000000000000000000000") {
                     switch (lineEvent.type) {
                         case "join":
                             bot.ReplyMessage (replyToken, $"有人把我加入 {lineEvent.source.type} 中了，大家好啊～");
@@ -61,11 +61,11 @@ namespace LineWebHook.Controllers {
                             break;
                     }
                 } else {
-                    actionResult = Ok ();
+                    actionResult = Ok();
                 }
             }
 
-            return actionResult;
+            return Ok();
         }
 
         private async Task<string> getPostDataAsync (HttpRequest request, string secret) {
